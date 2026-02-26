@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="me">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoaIT — Razvoj mobilnih aplikacija</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+
+      <a class="logo" href="#">
+        <span class="logo-name">Moa<span class="logo-it">IT</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Početna</a></li>
+        <li><a href="#apps">Vrste aplikacija</a></li>
+        <li><a href="#pricing">Cijene</a></li>
+        <li><a href="#process">Proces</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="btn-primary">Kontaktirajte nas</button>
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile dropdown menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Početna</a>
+    <a href="#apps">Vrste aplikacija</a>
+    <a href="#pricing">Cijene</a>
+    <a href="#process">Proces</a>
+    <button class="btn-primary">Kontaktirajte nas</button>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h1 class="hero-h1">
+        Mobilne aplikacije <br>
+        za rast <br>
+        <span class="accent">vašeg biznisa</span>
+      </h1>
+      <p class="hero-sub">
+        Dizajniramo i razvijamo iOS i Android aplikacije. <br>Brzo, povoljno i prilagođeno vašem biznisu.
+      </p>
+      <button class="btn-primary btn-large">Započnite projekat</button>
+    </div>
+
+    <!-- Rotating phone carousel — images swapped every 3s via JS -->
+    <div class="hero-phones">
+      <div class="phone pos-hidden-left">
+        <img src="gym home 2.png" alt="Prikaz aplikacije za teretanu" />
+      </div>
+      <div class="phone pos-left">
+        <img src="clothes home.png" alt="Prikaz aplikacije za odjeću" />
+      </div>
+      <div class="phone pos-center">
+        <img src="Group 2.png" alt="Prikaz aplikacije" />
+      </div>
+      <div class="phone pos-right">
+        <img src="Group 3.png" alt="Prikaz aplikacije" />
+      </div>
+      <div class="phone pos-hidden-right">
+        <img src="Group 4.png" alt="Prikaz aplikacije" />
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       ADVANTAGES
+       Sliding carousel — 3 cards desktop, 2 tablet, 1 mobile
+  ══════════════════════════════════════════════ -->
+  <section class="advantages" id="advantages">
+    <h2 class="section-title">Šta mobilna aplikacija može učiniti za vaš biznis</h2>
+
+    <div class="carousel-outer">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- Card 1 — Push notifications -->
+        <div class="adv-card">
+          <div class="adv-card-text">
+            <h3>Uvijek u džepu vašeg kupca</h3>
+            <p>Budite tamo gdje su i vaši kupci — na njihovom telefonu, uvijek dostupni i spremni za akciju.</p>
+          </div>
+          <div class="adv-card-visual">
+            <img src="iph.png" alt="opis" class="adv-card-img" style="max-height: 440px;"/>
+          </div>
+        </div>
+
+        <!-- Card 2 — Loyalty points -->
+        <div class="adv-card">
+          <div class="adv-card-text">
+            <h3>Kupci koji se stalno vraćaju</h3>
+            <p>Programi lojalnosti, push notifikacije i personalizovane ponude pretvaraju nove kupce u vjerne mušterije koje se vraćaju iznova.</p>
+          </div>
+          <div class="adv-card-visual">
+            <img src="brth.png" alt="opis" class="adv-card-img" style="max-height: 320px;" />
+          </div>
+        </div>
+
+        <!-- Card 3 — Order management -->
+        <div class="adv-card">
+          <div class="adv-card-text">
+            <h3>Vodite biznis pametnije</h3>
+            <p>Narudžbe, rezervacije i plaćanja — sve na jednom mjestu. Manje ručnog posla, manje grešaka i više vremena za ono što je zaista bitno.</p>
+          </div>
+          <div class="adv-card-visual">
+            <img src="orders1.png" alt="opis" class="adv-card-img"  />
+          </div>
+        </div>
+
+        <!-- Card 4 — Subscriptions -->
+        <div class="adv-card">
+          <div class="adv-card-text">
+            <h3>Prodajte više, direktno iz aplikacije</h3>
+            <p>Kupovine unutar aplikacije, pretplate i mobilna prodaja konvertuju bolje od web sajtova — jer su vaši kupci već na telefonu.</p>
+          </div>
+          <div class="adv-card-visual">
+            <img src="nzm.png" alt="opis" class="adv-card-img" style="max-height: 400px;"/>
+          </div>
+        </div>
+
+        <!-- Card 5 — Brand presence / app screen -->
+        <div class="adv-card">
+          <div class="adv-card-text">
+            <h3>Vaš brend, na njihovom ekranu</h3>
+            <p>Profesionalna aplikacija sa vašim brendom gradi povjerenje i šalje pravu poruku. Svaki put kad vide vašu ikonicu — vaš biznis im je na umu.</p>
+          </div>
+          <div class="adv-card-visual">
+            <img src="Group 11.png" alt="opis" class="adv-card-img" />
+          </div>
+        </div>
+
+      </div><!-- /carousel-track -->
+    </div><!-- /carousel-outer -->
+
+    <div class="carousel-dots" id="carouselDots"></div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       APP SHOWCASE
+       Tab switcher — click tab to swap content & phones
+  ══════════════════════════════════════════════ -->
+  <section class="showcase" id="apps">
+
+    <div class="showcase-header">
+      <h2 class="section-title">Aplikacije za svaku djelatnost</h2>
+      <p>Od restorana do teretana — pravimo mobilne aplikacije za razne industrije, svaku prilagođenu načinu na koji taj biznis funkcioniše.</p>
+    </div>
+
+    <!-- Tab pills -->
+    <div class="showcase-tabs">
+      <button class="showcase-tab active" data-tab="food">Restoran</button>
+      <button class="showcase-tab" data-tab="loyalty">Kafić</button>
+      <button class="showcase-tab" data-tab="ecom">Online prodavnica</button>
+      <button class="showcase-tab" data-tab="school">Škola</button>
+      <button class="showcase-tab" data-tab="gym">Teretana</button>
+    </div>
+
+    <div class="showcase-panels">
+
+      <!-- Food Ordering -->
+      <div class="showcase-panel active" data-panel="food">
+        <div class="showcase-text">
+          <span class="tag">Naručivanje hrane</span>
+          <h3>Naruči unaprijed, preskoči red</h3>
+          <p>Omogućite kupcima da pregledaju meni, prilagode narudžbu i plate — sve sa telefona. Smanjite vrijeme čekanja i povećajte prosječnu vrijednost narudžbe.</p>
+          <ul class="feature-list">
+            <li>Kompletno upravljanje menijem sa kategorijama i dodacima</li>
+            <li>Plaćanje unutar aplikacije</li>
+            <li>Obavještenja o statusu narudžbe u realnom vremenu</li>
+            <li>Zakazivanje preuzimanja i rezervacija</li>
+          </ul>
+        </div>
+        <div class="showcase-phones">
+          <div class="sc-phone sc-left"><img src="Group 5.png" alt="" /></div>
+          <div class="sc-phone sc-center"><img src="Group 2.png" alt="" /></div>
+          <div class="sc-phone sc-right"><img src="Group 10.png" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- Loyalty -->
+      <div class="showcase-panel" data-panel="loyalty">
+        <div class="showcase-text">
+          <span class="tag">Kafić</span>
+          <h3>Pretvorite nove kupce u stalne goste</h3>
+          <p>Nagradite kupce za svaku posjetu i kupovinu. Sistem bodova ih drži angažovanim — sa ponudama koje djeluju lično, a ne generički.</p>
+          <ul class="feature-list">
+            <li>Sistem bodova sa prilagodljivim pravilima</li>
+            <li>Nagrade koje se mogu iskoristiti — besplatni artikli, popusti, pogodnosti</li>
+            <li>Push notifikacije za promocije i dostignuća</li>
+            <li>Kontrolna tabla sa uvidima o kupcima</li>
+          </ul>
+        </div>
+        <div class="showcase-phones">
+          <div class="sc-phone sc-left"><img src="Group 8.png" alt="" /></div>
+          <div class="sc-phone sc-center"><img src="Group 4.png" alt="" /></div>
+          <div class="sc-phone sc-right"><img src="Group 6.png" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- E-Commerce -->
+      <div class="showcase-panel" data-panel="ecom">
+        <div class="showcase-text">
+          <span class="tag">Online prodavnica</span>
+          <h3>Vaša radnja, u njihovom džepu</h3>
+          <p>Kupovina bez kompromisa. Premium iskustvo koje nadmašuje web sajt — brže, stabilnije i dizajnirano da povećava prodaju.</p>
+          <ul class="feature-list">
+            <li>Katalog proizvoda sa pretragom, filterima i kolekcijama</li>
+            <li>Sigurno plaćanje sa sačuvanim metodama</li>
+            <li>Praćenje narudžbe od slanja do dostave</li>
+            <li>Lista želja, recenzije i personalizovane preporuke</li>
+          </ul>
+        </div>
+        <div class="showcase-phones">
+          <div class="sc-phone sc-left"><img src="clothes category.png" alt="" /></div>
+          <div class="sc-phone sc-center"><img src="clothes home.png" alt="" /></div>
+          <div class="sc-phone sc-right"><img src="clothes one product.png" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- School -->
+      <div class="showcase-panel" data-panel="school">
+        <div class="showcase-text">
+          <span class="tag">Škola</span>
+          <h3>Učenici, roditelji i nastavnici — povezani u svakom trenutku</h3>
+          <p>Jedna aplikacija za cijelu školsku zajednicu. Obavještenja, rasporedi, ocjene i direktne poruke — sve na jednom mjestu, dostupno kad god zatreba.</p>
+          <ul class="feature-list">
+            <li>Rasporedi časova, događaji i termini</li>
+            <li>Direktne poruke između roditelja, učenika i osoblja</li>
+            <li>Ocjene, zadaci i evidencija prisustva</li>
+            <li>Push obavještenja za cijelu školu ili pojedinačne razrede</li>
+          </ul>
+        </div>
+        <div class="showcase-phones">
+          <div class="sc-phone sc-left"><img src="Group 7.png" alt="" /></div>
+          <div class="sc-phone sc-center"><img src="Group 3.png" alt="" /></div>
+          <div class="sc-phone sc-right"><img src="Group 9.png" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- Gym -->
+      <div class="showcase-panel" data-panel="gym">
+        <div class="showcase-text">
+          <span class="tag">Teretana</span>
+          <h3>Lični fitnes centar svakog člana</h3>
+          <p>Pružite članovima premium iskustvo van teretane. Rezervacije časova, planovi treninga, praćenje napretka i upravljanje članarinama — sve u jednoj brendiranoj aplikaciji.</p>
+          <ul class="feature-list">
+            <li>Digitalna članska karta sa QR kodom za pristup</li>
+            <li>Praćenje ličnog napretka i dnevnik treninga</li>
+            <li>Planovi članarine i plaćanje pretplate u aplikaciji</li>
+            <li>Raspored treninga i rezervacija jednim klikom</li>
+          </ul>
+        </div>
+        <div class="showcase-phones">
+          <div class="sc-phone sc-left"><img src="gym welcome.png" alt="" /></div>
+          <div class="sc-phone sc-center"><img src="gym home 2.png" alt="" /></div>
+          <div class="sc-phone sc-right"><img src="gym 2.png" alt="" /></div>
+        </div>
+      </div>
+
+    </div><!-- /showcase-panels -->
+          <p><br>Ne vidite svoju djelatnost? <br><span style="color:var(--accent)">Pravimo i potpuno prilagođene aplikacije za sve vrste biznisa.</span></p>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+
+  <div class="pricing-header">
+    <h2 class="section-title">Jednostavne i transparentne cijene</h2>
+    <p>Fiksne cijene, bez skrivenih troškova. 50% na početku, 50% po isporuci.</p>
+  </div>
+
+  <div class="pricing-cards">
+
+    <div class="pricing-card">
+      <div class="pricing-card-top">
+        <span class="tag">Starter</span>
+        <div class="pricing-price">Od <strong>2.000 €</strong></div>
+        <p class="pricing-desc">Idealno za jednostavne aplikacije — programi lojalnosti, upravljanje teretanom ili rezervacije usluga.</p>
+      </div>
+      <ul class="pricing-features">
+        <li>iOS i Android aplikacija</li>
+        <li>Do 5 osnovnih funkcionalnosti</li>
+        <li>2 runde dizajnerskih izmjena</li>
+        <li>Postavljanje na App Store i Google Play</li>
+        <li>Isporuka za 30 dana</li>
+        <li>Podrška 24/7</li>
+      </ul>
+      <button class="btn-primary btn-large btn-outline">Zatražite ponudu</button>
+    </div>
+
+    <div class="pricing-card pricing-card--featured">
+      <div class="pricing-card-top">
+        <span class="tag">Business</span>
+        <div class="pricing-price">Od <strong>5.000 €</strong></div>
+        <p class="pricing-desc">Za složenije aplikacije — online prodavnice, naručivanje hrane, školske platforme ili aplikacije sa više funkcionalnosti.</p>
+      </div>
+      <ul class="pricing-features">
+        <li>Sve iz Starter paketa</li>
+        <li>Neograničen broj funkcionalnosti</li>
+        <li>Prilagođen dizajn sistem</li>
+        <li>Integracije sa drugim servisima</li>
+        <li>Plaćanje unutar aplikacije</li>
+        <li>Prioritetna podrška</li>
+      </ul>
+      <button class="btn-primary btn-large">Zatražite ponudu</button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-card-top">
+        <span class="tag">Custom</span>
+        <div class="pricing-price"><strong>Dogovorimo se</strong></div>
+        <p class="pricing-desc">Imate jedinstvenu ideju koja ne ulazi u gotov okvir? Zajedno ćemo definisati obim i dati vam fiksnu cijenu.</p>
+      </div>
+      <ul class="pricing-features">
+        <li>Sve iz Business paketa</li>
+        <li>Potpuno prilagođena arhitektura</li>
+        <li>NDA prije prvog poziva</li>
+        <li>Posvećen menadžer projekta</li>
+        <li>Prilagođen rok isporuke</li>
+        <li>Mjesečni hosting i održavanje</li>
+      </ul>
+      <button class="btn-primary btn-large btn-outline">Zakažite poziv</button>
+    </div>
+
+  </div>
+
+  <p class="pricing-note">Svi paketi uključuju mjesečni hosting i održavanje — cijena se određuje prema potrebama vaše aplikacije.</p>
+
+</section>
+
+
+  <!-- ══════════════════════════════════════════════
+       PROCESS TIMELINE
+       Steps fade in on scroll via IntersectionObserver
+  ══════════════════════════════════════════════ -->
+  <section class="process" id="process">
+
+    <div class="process-header">
+      <h2 class="section-title">Od prvog poziva do<br>prodavnice aplikacija — evo kako funkcioniše</h2>
+      <p>Jasan i transparentan proces, da u svakom trenutku znate šta se dešava i šta slijedi.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-bubble">01</div>
+        <div class="timeline-content">
+          <span class="tag">Upoznavanje</span>
+          <h3>Upoznajemo vašu viziju</h3>
+          <p>Javite nam se i zakazaćemo konsultaciju — putem video poziva, telefona ili poruka, kako vam najviše odgovara. Razgovaraćemo o vašoj ideji za aplikaciju, ciljnoj publici, potrebnim funkcionalnostima i ciljevima. Prije razmjene bilo kakvih detalja, ako je potrebno, potpisujemo NDA kako bi vaša ideja bila potpuno zaštićena.</p>
+          <div class="pills">
+            <span class="pill">Video poziv</span>
+            <span class="pill">Telefonski poziv</span>
+            <span class="pill">Poruke</span>
+            <span class="pill">Potpisan NDA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-bubble">02</div>
+        <div class="timeline-content">
+          <span class="tag">Ponuda</span>
+          <h3>Transparentne cijene, bez iznenađenja</h3>
+          <p>Kad imamo jasnu sliku vaših zahtjeva, pripremamo detaljnu ponudu — obim posla, rok i fiksnu cijenu. Trudimo se da nađemo cifru koja ima smisla za obje strane. Depozit od 50% je potreban za početak, a preostalih 50% se plaća po isporuci.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item highlight">
+        <div class="timeline-bubble">03</div>
+        <div class="timeline-content">
+          <span class="tag">Dizajn</span>
+          <h3>Vaša aplikacija dobija oblik za par dana</h3>
+          <p>Čim se usaglasimo oko ponude, naš dizajn tim kreće sa radom. Za nekoliko dana dobijate kompletan prikaz vaše aplikacije — svaki ekran, svaka interakcija. Imate <strong>dvije runde izmjena</strong> da se uvjerite da sve izgleda i funkcioniše tačno onako kako želite, prije nego što napišemo i jednu liniju koda.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-bubble">04</div>
+        <div class="timeline-content">
+          <span class="tag">Ugovor i početak</span>
+          <h3>Potpisujemo, pa gradimo</h3>
+          <p>Zadovoljni dizajnom? Potpisujemo ugovor i razvoj počinje. Imaćete pristup praćenju napretka u realnom vremenu, tako da možete pratiti svaku fazu — bez tišine, bez nagađanja gdje su stvari stigle.</p>
+          <div class="pills">
+            <span class="pill">Potpisan ugovor</span>
+            <span class="pill">Praćenje napretka uživo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-bubble">05</div>
+        <div class="timeline-content">
+          <span class="tag">Lansiranje</span>
+          <h3>Na App Store-u i Google Play-u za manje od mjesec dana</h3>
+          <p>Većina aplikacija je potpuno izgrađena, testirana i postavljena na Apple App Store i Google Play Store za manje od 30 dana od potpisivanja ugovora. Složeniji projekti traju malo duže — postavićemo realan rok unaprijed, da nikad ne čekate bez objašnjenja.</p>
+          <div class="pills">
+            <span class="pill">App Store</span>
+            <span class="pill">Google Play</span>
+            <span class="pill">Ispod 30 dana</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-bubble">06</div>
+        <div class="timeline-content">
+          <span class="tag">Stalna podrška</span>
+          <h3>Ne nestajemo nakon lansiranja</h3>
+          <p>Vaša aplikacija je online — ali naš posao tu ne staje. Nudimo podršku 24/7 tokom razvoja i nakon lansiranja. Naš mjesečni plan hostinga i održavanja drži vašu aplikaciju redovno ažuriranom, sigurnom i stabilnom, da se vi možete fokusirati na svoj biznis.</p>
+          <div class="pills">
+            <span class="pill">Podrška 24/7</span>
+            <span class="pill">Mjesečno održavanje</span>
+            <span class="pill">Hosting uključen</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA at the bottom of the timeline -->
+      <div class="timeline-cta">
+        <button class="btn-primary btn-large">Započnite projekat</button>
+        <p>Besplatna konsultacija · Bez obaveza</p>
+      </div>
+
+    </div><!-- /timeline -->
+
+  </section>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2025 MoaIT. All rights reserved.</p>
+    
+  </div>
+</footer>
+
+  <!-- ══════════════════════════════════════════════
+     CONTACT POPUP
+══════════════════════════════════════════════ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup">
+
+    <button class="popup-close" onclick="closePopup()" aria-label="Zatvori">✕</button>
+
+    <span class="tag">Besplatna konsultacija</span>
+    <h2>Hajde da napravimo vašu aplikaciju</h2>
+    <p>Ostavite vaše podatke i javićemo vam se u roku od 24 sata.</p>
+
+    <div class="popup-form">
+      <div class="popup-row">
+        <div class="popup-field">
+          <label>Vaše ime</label>
+          <input type="text" placeholder="Marko Marković" />
+        </div>
+        <div class="popup-field">
+          <label>Email</label>
+          <input type="email" placeholder="marko@gmail.me" />
+        </div>
+      </div>
+      <div class="popup-field">
+        <label>Telefon <span>(opciono)</span></label>
+        <input type="tel" placeholder="+382 67 123 456" />
+      </div>
+      <div class="popup-field">
+        <label>Recite nam nešto o vašoj ideji</label>
+        <textarea placeholder="Kakva aplikacija Vam treba? Imate li neke funkcionalnosti na umu?" rows="4"></textarea>
+      </div>
+      <button class="btn-primary btn-large popup-submit">Pošaljite poruku</button>
+      <p class="popup-note">Bez obaveza · Odgovaramo u roku od 24h</p>
+    </div>
+
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
