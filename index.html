@@ -71,6 +71,9 @@
 
     <!-- Rotating phone carousel — images swapped every 3s via JS -->
     <div class="hero-phones">
+      <div class="phone pos-far-hidden-left">
+        <img src="hotel home.png" alt="Hotel app screenshot" />
+      </div>
       <div class="phone pos-hidden-left">
         <img src="gym home 2.png" alt="Prikaz aplikacije za teretanu" />
       </div>
@@ -182,6 +185,7 @@
       <button class="showcase-tab" data-tab="ecom">Online prodavnica</button>
       <button class="showcase-tab" data-tab="school">Škola</button>
       <button class="showcase-tab" data-tab="gym">Teretana</button>
+      <button class="showcase-tab" data-tab="hotel">Hotel</button>
     </div>
 
     <div class="showcase-panels">
@@ -286,6 +290,26 @@
         </div>
       </div>
 
+<!-- Hotel i ugostiteljstvo -->
+<div class="showcase-panel" data-panel="hotel">
+  <div class="showcase-text">
+    <span class="tag">Hotel i ugostiteljstvo</span>
+    <h3>Iskustvo gosta, osmišljeno na nov način</h3>
+    <p>Potpuni digitalni pomoćnik za hotele, odmarališta i apartmane. Check-in, naručivanje sobnih usluga, rezervacije spa-a, mapa resorta, događaji i FAQ za goste — sve dostupno direktno sa telefona.</p>
+    <ul class="feature-list">
+      <li>Digitalni check-in/check-out sa sobnim ključem preko QR koda</li>
+      <li>Naručivanje sobnih usluga, čišćenje i prijava problema</li>
+      <li>Rezervacije masaža, saune i drugih usluga sa kompletnim cijenama</li>
+      <li>Interaktivna mapa resorta i kalendar događaja hotela</li>
+    </ul>
+  </div>
+  <div class="showcase-phones">
+    <div class="sc-phone sc-left"><img src="hotel spa.png" alt="" /></div>
+    <div class="sc-phone sc-center"><img src="hotel home.png" alt="" /></div>
+    <div class="sc-phone sc-right"><img src="hotel room.png" alt="" /></div>
+  </div>
+</div>
+
     </div><!-- /showcase-panels -->
           <p><br>Ne vidite svoju djelatnost? <br><span style="color:var(--accent)">Pravimo i potpuno prilagođene aplikacije za sve vrste biznisa.</span></p>
   </section>
@@ -306,7 +330,7 @@
     <div class="pricing-card">
       <div class="pricing-card-top">
         <span class="tag">Starter</span>
-        <div class="pricing-price">Od <strong>2.000 €</strong></div>
+        <div class="pricing-price">Od <strong>1.500 €</strong></div>
         <p class="pricing-desc">Idealno za jednostavne aplikacije — programi lojalnosti, upravljanje teretanom ili rezervacije usluga.</p>
       </div>
       <ul class="pricing-features">
@@ -323,7 +347,7 @@
     <div class="pricing-card pricing-card--featured">
       <div class="pricing-card-top">
         <span class="tag">Business</span>
-        <div class="pricing-price">Od <strong>5.000 €</strong></div>
+        <div class="pricing-price">Od <strong>4.000 €</strong></div>
         <p class="pricing-desc">Za složenije aplikacije — online prodavnice, naručivanje hrane, školske platforme ili aplikacije sa više funkcionalnosti.</p>
       </div>
       <ul class="pricing-features">
@@ -461,8 +485,10 @@
   <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <p>© 2025 MoaIT. All rights reserved.</p>
-    
+    <p>&copy; 2025 MoaIT. All rights reserved.</p>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
   </div>
 </footer>
 

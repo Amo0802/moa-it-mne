@@ -367,11 +367,12 @@ nav {
   opacity: 1;
 }
 
-.phone.pos-center      { width: 220px; height: 460px; transform: translateX(-50%);   z-index: 3; opacity: 1; }
-.phone.pos-left        { width: 200px; height: 420px; transform: translateX(-155%);  z-index: 2; opacity: 1; }
-.phone.pos-right       { width: 200px; height: 420px; transform: translateX(55%);    z-index: 2; opacity: 1; }
-.phone.pos-hidden-left { width: 180px; height: 380px; transform: translateX(-240%);  z-index: 1; opacity: 0; pointer-events: none; }
-.phone.pos-hidden-right{ width: 180px; height: 380px; transform: translateX(140%);   z-index: 1; opacity: 0; pointer-events: none; }
+.phone.pos-center           { width: 220px; height: 460px; transform: translateX(-50%);   z-index: 3; opacity: 1; }
+.phone.pos-left             { width: 200px; height: 420px; transform: translateX(-155%);  z-index: 2; opacity: 1; }
+.phone.pos-right            { width: 200px; height: 420px; transform: translateX(55%);    z-index: 2; opacity: 1; }
+.phone.pos-hidden-left      { width: 180px; height: 380px; transform: translateX(-240%);  z-index: 1; opacity: 0; pointer-events: none; }
+.phone.pos-hidden-right     { width: 180px; height: 380px; transform: translateX(140%);   z-index: 1; opacity: 0; pointer-events: none; }
+.phone.pos-far-hidden-left  { width: 180px; height: 380px; transform: translateX(-320%);  z-index: 0; opacity: 0; pointer-events: none; }
 
 
 /* ──────────────────────────────────────────────

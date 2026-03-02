@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="me">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uslovi korišćenja — MoaIT</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .terms-hero {
+      padding: 80px 40px 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .terms-hero h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .terms-hero p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .terms-content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 40px 100px;
+    }
+    .terms-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 48px 0 12px;
+    }
+    .terms-content h2:first-of-type {
+      margin-top: 0;
+    }
+    .terms-content p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .terms-content ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-left: 0;
+    }
+    .terms-content ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .terms-content ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .terms-hero { padding: 56px 20px 24px; }
+      .terms-content { padding: 32px 20px 72px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-name">Moa<span class="logo-it">IT</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#home">Početna</a></li>
+        <li><a href="index.html#apps">Vrste aplikacija</a></li>
+        <li><a href="index.html#pricing">Cijene</a></li>
+        <li><a href="index.html#process">Proces</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="btn-primary" onclick="window.location.href='index.html'">Kontakt</button>
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Otvorite meni">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#home">Početna</a>
+    <a href="index.html#apps">Vrste aplikacija</a>
+    <a href="index.html#pricing">Cijene</a>
+    <a href="index.html#process">Proces</a>
+    <button class="btn-primary" onclick="window.location.href='index.html'">Kontakt</button>
+  </div>
+
+  <section class="terms-hero">
+    <span class="tag">Pravno</span>
+    <h1>Uslovi korišćenja</h1>
+    <p>Posljednja izmjena: januar 2025</p>
+  </section>
+
+  <div class="terms-content">
+
+    <h2>1. Pregled</h2>
+    <p>Ovi Uslovi korišćenja ("Uslovi") regulišu korišćenje usluga koje pruža MoaIT ("mi", "nas", "naš"), kompanija za razvoj mobilnih aplikacija. Korišćenjem naših usluga, Vi ("Klijent", "Vi") prihvatate ove Uslove u cijelosti.</p>
+
+    <h2>2. Usluge</h2>
+    <p>MoaIT dizajnira i razvija nativne iOS i Android mobilne aplikacije za preduzeća. Naše usluge uključuju, ali nisu ograničene na:</p>
+    <ul>
+      <li>Dizajn aplikacija i UI/UX makete</li>
+      <li>Nativni razvoj mobilnih aplikacija za iOS i Android</li>
+      <li>Podnošenje aplikacija u App Store i Google Play Store</li>
+      <li>Hosting, održavanje i podrška nakon lansiranja</li>
+    </ul>
+
+    <h2>3. Ponude i cijene</h2>
+    <p>Sve ponude za projekte su pisane i važe 14 dana od datuma izdavanja. Cijene su fiksne kada se prihvati ponuda i potpiše ugovor. Ne naplaćujemo skrivene naknade. Sve dodatne funkcionalnosti ili promjene nakon potpisivanja ugovora mogu dovesti do dodatnih troškova, koji će biti prethodno dogovoreni.</p>
+
+    <h2>4. Uslovi plaćanja</h2>
+    <p>Plaćanje avansa od 50% ukupne cijene projekta je obavezno prije početka rada. Preostalih 50% se plaća po isporuci kompletne aplikacije. Plaćanja se vrše bankovnim transferom ili dogovorenim metodama. Kašnjenje plaćanja može uzrokovati odlaganje projekta ili obustavu dok dug nije izmiren.</p>
+
+    <h2>5. Rok projekta</h2>
+    <p>Procijenjeni rokovi isporuke navedeni su u projektnom prijedlogu. Standardni projekti obično se završavaju u roku od 30 dana od potpisivanja ugovora. Kompleksni projekti mogu zahtijevati dodatno vrijeme, što će biti unaprijed dogovoreno. Kašnjenja uzrokovana od strane Klijenta (kao što su kašnjenja u povratnoj informaciji, sadržaju ili odobrenjima) mogu produžiti rok. Sva izmjena roka biće pravovremeno komunicirana.</p>
+
+    <h2>6. Revizije dizajna</h2>
+    <p>Svaki projekat uključuje dva kruga revizija dizajna kao standard. Dodatne revizije mogu se dogovoriti uz dodatnu naknadu. Revizije se odnose samo na fazu dizajna — nakon početka razvoja, promjene u dizajnu mogu zahtijevati zahtjev za promjenu i dodatne naknade.</p>
+
+    <h2>7. Intelektualna svojina</h2>
+    <p>Nakon potpune uplate, Klijent dobija potpuno vlasništvo nad završenom aplikacijom, uključujući sve dizajnerske materijale i isporuke kreirane specifično za njegov projekat. Međutim, osnovni izvorni kod ostaje ekskluzivna svojina MoaIT-a. Klijentu se dodjeljuje trajna, neekskluzivna licenca za korišćenje aplikacije u isporučenom obliku, ali nije dozvoljeno preprodavati, distribuirati ili davati podlicencu za izvorni kod. MoaIT zadržava pravo ponovne upotrebe koda, biblioteka, framework-a i razvojnih alata u drugim projektima. Takođe zadržavamo pravo da prikažemo završeni projekat u našem portfoliju osim ako Klijent ne zatraži drugačije u pisanoj formi.</p>
+
+    <h2>8. Povjerljivost i NDA</h2>
+    <p>Povjerljivost shvatamo ozbiljno. Ugovor o povjerljivosti (NDA) se potpisuje prije bilo kakvih diskusija o projektu. Obje strane se obavezuju da neće otkrivati povjerljive informacije bez prethodnog pisanog pristanka. Ova obaveza važi i nakon završetka projekta.</p>
+
+    <h2>9. Hosting i održavanje</h2>
+    <p>Hosting i održavanje nakon lansiranja se nude kao odvojena mjesečna usluga. To uključuje hosting servera, sigurnosne nadogradnje, ispravke grešaka i manje prilagodbe. Mjesečna naknada zavisi od složenosti aplikacije i zahtjeva. Svaka strana može raskinuti ugovor o hostingu i održavanju uz 30 dana pisanog obavještenja.</p>
+
+    <h2>10. Podnošenje aplikacije u prodavnice</h2>
+    <p>Mi se brinemo o podnošenju vaše aplikacije u Apple App Store i Google Play Store. Ipak, odobrenje zavisi isključivo od Apple-a i Google-a. Uložićemo razumne napore da aplikacija zadovolji njihove smjernice, ali ne možemo garantovati rokove ili ishod odobrenja. Sve naknade koje naplaćuju Apple ili Google (npr. za developerski račun) snosi MoaIT, bez dodatnih troškova za Klijenta.</p>
+
+    <h2>11. Obaveze Klijenta</h2>
+    <p>Klijent se obavezuje da:</p>
+    <ul>
+      <li>Pribavi sav potreban sadržaj, brendirane materijale i informacije na vrijeme</li>
+      <li>Odgovori na zahtjeve za povratnu informaciju i odobrenja u razumnom roku</li>
+      <li>Osigura da sav sadržaj ne krši prava intelektualne svojine trećih strana</li>
+    </ul>
+
+    <h2>12. Raskid</h2>
+    <p>Bilo koja strana može raskinuti projekat slanjem pisanog obavještenja. Ako Klijent raskine projekat nakon što je rad započet, avans se ne vraća. Ako MoaIT raskine projekat, Klijent će dobiti pun povrat svih uplaćenih sredstava.</p>
+
+    <h2>13. Rješavanje sporova</h2>
+    <p>Svi sporovi koji proisteknu iz ovih Uslova ili naših usluga prvo će se pokušati riješiti dobronamjernim pregovorima između obje strane. Ako se rješenje ne može postići, spor će se rješavati medijacijom ili, ako je potrebno, pred sudovima jurisdikcije u kojoj je MoaIT registrovan.</p>
+
+    <h2>14. Izmjene ovih Uslova</h2>
+    <p>Zadržavamo pravo da u bilo kojem trenutku ažuriramo ove Uslove. Klijenti će biti obaviješteni o svim izmjenama putem e-maila najmanje mjesec dana prije nego što nove odredbe stupe na snagu. Izmjene će takođe biti objavljene na ovoj stranici sa ažuriranim datumom "Posljednja izmjena". Nastavak korišćenja naših usluga nakon stupanja na snagu novih Uslova predstavlja prihvatanje revidiranih Uslova.</p>
+
+    <h2>15. Kontakt</h2>
+    <p>Ako imate pitanja u vezi sa ovim Uslovima, kontaktirajte nas na <a href="mailto:hello@moa-it.me" style="color:var(--accent);text-decoration:none;">hello@moa-it.me</a>.</p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2025 MoaIT. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const hamburger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 960) {
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

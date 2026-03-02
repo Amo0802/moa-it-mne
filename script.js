@@ -1,8 +1,8 @@
 /* ══════════════════════════════════════════════════════════
    TABLE OF CONTENTS
    1. Nav — mobile menu toggle
-   2. Hero — phone rotation carousel
-   3. Advantages — sliding card carousel (with drag/scroll)
+   2. Hero — phone rotation carousel (6 phones)
+   3. Advantages — sliding card carousel (with drag/scroll/trackpad)
    4. Showcase — tab switcher
    5. Timeline — scroll-triggered fade-in
 ══════════════════════════════════════════════════════════ */
@@ -36,10 +36,11 @@ window.addEventListener('resize', () => {
 
 
 /* ──────────────────────────────────────────────
-   2. HERO — Phone rotation
+   2. HERO — Phone rotation (6 phones, 6 positions)
 ────────────────────────────────────────────── */
 (function () {
   const POSITIONS = [
+    'pos-far-hidden-left',
     'pos-hidden-left',
     'pos-left',
     'pos-center',
@@ -48,10 +49,10 @@ window.addEventListener('resize', () => {
   ];
 
   const phones = document.querySelectorAll('.phone');
-  let state = [0, 1, 2, 3, 4];
+  let state = [0, 1, 2, 3, 4, 5];
 
   function rotate() {
-    state = state.map(s => (s + 1) % 5);
+    state = state.map(s => (s + 1) % 6);
     phones.forEach((phone, i) => {
       const loaded = phone.classList.contains('loaded') ? ' loaded' : '';
       phone.className = 'phone ' + POSITIONS[state[i]] + loaded;
@@ -89,7 +90,7 @@ window.addEventListener('resize', () => {
    3. ADVANTAGES — Sliding card carousel
    - 3 cards visible on desktop, 2 tablet, 1 mobile
    - Auto-advances every 4s, pauses on hover/drag
-   - Touch swipe + mouse drag support
+   - Touch swipe + mouse drag + trackpad scroll support
 ────────────────────────────────────────────── */
 (function () {
   const outer         = document.querySelector('.carousel-outer');
