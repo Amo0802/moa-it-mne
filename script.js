@@ -120,7 +120,7 @@ window.addEventListener("resize", () => {
     for (let i = 0; i <= maxIndex; i++) {
       const btn = document.createElement("button");
       btn.className = "dot" + (i === currentIndex ? " active" : "");
-      btn.setAttribute("aria-label", "Go to slide " + (i + 1));
+      btn.setAttribute("aria-label", "Pređi na slajd " + (i + 1));
       btn.addEventListener("click", () => goTo(i));
       dotsContainer.appendChild(btn);
     }
@@ -468,28 +468,28 @@ document.querySelectorAll(".mobile-menu a").forEach((link) => {
 
     switch (name) {
       case "full_name":
-        if (!value) return "Full name is required";
+        if (!value) return "Ime i prezime je obavezno";
         if (value.length > LIMITS.full_name)
-          return `Maximum ${LIMITS.full_name} characters`;
+          return `Maksimum ${LIMITS.full_name} karaktera`;
         return null;
 
       case "email":
-        if (!value) return "Email is required";
+        if (!value) return "Email je obavezan.";
         if (value.length > LIMITS.email)
-          return `Maximum ${LIMITS.email} characters`;
+          return `Maksimum ${LIMITS.email} karaktera`;
         if (!EMAIL_REGEX.test(value))
-          return "Please enter a valid email address";
+          return "Unesite ispravnu email adresu";
         return null;
 
       case "phone":
         if (value && value.length > LIMITS.phone)
-          return `Maximum ${LIMITS.phone} characters`;
+          return `Maksimum ${LIMITS.phone} karaktera`;
         return null;
 
       case "message":
-        if (!value) return "Message is required";
+        if (!value) return "Poruka je obavezna";
         if (value.length > LIMITS.message)
-          return `Maximum ${LIMITS.message} characters`;
+          return `Maksimum ${LIMITS.message} karaktera`;
         return null;
 
       default:
@@ -596,14 +596,14 @@ document.querySelectorAll(".mobile-menu a").forEach((link) => {
 
     // Check Turnstile
     if (!turnstileToken) {
-      showStatus("error", "Please complete the CAPTCHA verification.");
+      showStatus("error", "Molimo potvrdite CAPTCHA verifikaciju.");
       return;
     }
 
     const submitBtn = document.querySelector(".popup-submit");
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
+    submitBtn.textContent = "Slanje...";
 
     try {
       const response = await fetch(`${API_BASE}/api/contact`, {
@@ -623,14 +623,14 @@ document.querySelectorAll(".mobile-menu a").forEach((link) => {
 
       if (!response.ok) {
         throw new Error(
-          result.error || "Something went wrong. Please try again.",
+          result.error || "Nešto je pošlo po zlu. Pokušajte ponovo.",
         );
       }
 
       // Success
       showStatus(
         "success",
-        "Thank you! We'll get back to you within 24 hours.",
+        "Hvala vam! Javićemo vam se u roku od 24 sata.",
       );
 
       // Reset form fields
