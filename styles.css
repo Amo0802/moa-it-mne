@@ -730,7 +730,7 @@ nav {
    PRICING
 ────────────────────────────────────────────── */
 .pricing {
-  padding: 100px 40px;
+  padding: 60px 40px;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -1358,7 +1358,11 @@ footer a:hover {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-h);
+  scroll-padding-top: calc(var(--nav-h) - 80px);
+}
+
+#home {
+  scroll-margin-top: 80px;
 }
 
 /* ──────────────────────────────────────────────
