@@ -14,6 +14,7 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -540,21 +541,33 @@
         <div class="popup-row">
           <div class="popup-field">
             <label>Vaše ime</label>
-            <input type="text" name="full_name" placeholder="Marko Marković" />
+            <input type="text" name="full_name" placeholder="Marko Marković" maxlength="100" />
           </div>
           <div class="popup-field">
             <label>Email</label>
-            <input type="email" name="email" placeholder="marko@gmail.me" />
+            <input type="email" name="email" placeholder="marko@gmail.me" maxlength="150" />
           </div>
         </div>
         <div class="popup-field">
           <label>Telefon <span>(opciono)</span></label>
-          <input type="tel" name="phone" placeholder="+382 67 123 456" />
+          <input type="tel" name="phone" placeholder="+382 67 123 456" maxlength="30" />
         </div>
         <div class="popup-field">
           <label>Recite nam nešto o vašoj ideji</label>
-          <textarea name="message" placeholder="Kakva aplikacija Vam treba? Imate li neke funkcionalnosti na umu?" rows="4"></textarea>
+          <textarea name="message" placeholder="Kakva aplikacija Vam treba? Imate li neke funkcionalnosti na umu?"
+            rows="4" maxlength="2000"></textarea>
         </div>
+
+        <!-- Honeypot — invisible to users, traps bots -->
+        <div class="popup-field" style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <input type="text" name="website_url" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- Cloudflare Turnstile CAPTCHA -->
+        <div class="popup-turnstile">
+          <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark"></div>
+        </div>
+
         <button class="btn-primary btn-large popup-submit">Pošaljite poruku</button>
         <p class="popup-note">Bez obaveza · Odgovaramo u roku od 24h</p>
       </div>

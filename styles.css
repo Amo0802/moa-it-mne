@@ -1360,3 +1360,89 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
 }
+
+/* ──────────────────────────────────────────────
+   FORM VALIDATION & STATUS STYLES
+────────────────────────────────────────────── */
+
+/* Field error message */
+.field-error {
+  font-size: 0.75rem;
+  color: #f87171;
+  margin-top: 2px;
+  animation: fadeInError 0.2s ease;
+}
+
+@keyframes fadeInError {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Red border on invalid field */
+.popup-field input.input-error,
+.popup-field textarea.input-error {
+  border-color: #f87171 !important;
+}
+
+.popup-field input.input-error:focus,
+.popup-field textarea.input-error:focus {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.15);
+}
+
+/* Character counter */
+.field-counter {
+  display: block;
+  text-align: right;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 2px;
+}
+
+.field-counter.over-limit {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* Submit button disabled state */
+.popup-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Status messages */
+.popup-status {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeInError 0.3s ease;
+}
+
+.popup-status-success {
+  background: rgba(132, 204, 22, 0.1);
+  color: #a3e635;
+  border: 1px solid rgba(132, 204, 22, 0.2);
+}
+
+.popup-status-error {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+/* Turnstile widget alignment */
+.popup-turnstile {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
+}
