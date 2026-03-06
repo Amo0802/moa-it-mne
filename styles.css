@@ -47,6 +47,13 @@ body {
   overflow-x: hidden;
 }
 
+body.popup-open {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+}
 
 /* ──────────────────────────────────────────────
    2. GLOBAL / SHARED
@@ -1182,12 +1189,16 @@ nav {
   backdrop-filter: blur(6px);
   z-index: 200;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 24px;
+  padding-bottom: env(safe-area-inset-bottom, 24px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .popup-overlay.open {
@@ -1205,6 +1216,8 @@ nav {
   position: relative;
   transform: translateY(20px);
   transition: transform 0.25s ease;
+  margin: auto 0;
+  flex-shrink: 0;
 }
 
 .popup-overlay.open .popup {
@@ -1275,7 +1288,7 @@ nav {
 .popup-field input,
 .popup-field textarea {
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #fff;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1309,11 +1322,17 @@ nav {
 
 @media (max-width: 520px) {
   .popup {
-    padding: 32px 24px;
+    padding: 28px 20px;
+    border-radius: 20px;
   }
 
   .popup-row {
     grid-template-columns: 1fr;
+  }
+
+  .popup-overlay {
+    padding: 12px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
 }
 

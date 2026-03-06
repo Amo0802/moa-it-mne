@@ -348,15 +348,21 @@ window.addEventListener("resize", () => {
 /* ──────────────────────────────────────────────
    POPUP — open / close
 ────────────────────────────────────────────── */
+let savedScrollY = 0;
+
 function openPopup() {
-  document.getElementById("popupOverlay").classList.add("open");
-  document.body.style.overflow = "hidden";
+  savedScrollY = window.scrollY;
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.classList.add('popup-open');
+  document.getElementById('popupOverlay').classList.add('open');
   clearAllErrors();
 }
 
 function closePopup() {
-  document.getElementById("popupOverlay").classList.remove("open");
-  document.body.style.overflow = "";
+  document.getElementById('popupOverlay').classList.remove('open');
+  document.body.classList.remove('popup-open');
+  document.body.style.top = '';
+  window.scrollTo(0, savedScrollY);
 }
 
 document.getElementById("popupOverlay").addEventListener("click", function (e) {
