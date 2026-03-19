@@ -548,8 +548,10 @@ nav {
   user-select: none;
 }
 
-.adv-card:hover {
-  background: var(--card-bg-hover);
+@media (hover: hover) {
+  .adv-card:hover {
+    background: var(--card-bg-hover);
+  }
 }
 
 .adv-card-text h3 {

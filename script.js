@@ -95,6 +95,20 @@ window.addEventListener("resize", () => {
    - 3 cards visible on desktop, 2 tablet, 1 mobile
    - Auto-advances every 4s, pauses on hover/drag
    - Touch swipe + mouse drag + trackpad scroll support
+
+   Touch strategy (fixes scroll hijacking + double-tap):
+   ─────────────────────────────────────────────
+   Phase 1: touchstart + PASSIVE touchmove — detects direction.
+            Because it's passive, the browser can scroll freely
+            without waiting for JS.
+   Phase 2: Once horizontal intent is confirmed (dx > dy * 1.5,
+            min 10px), a NON-PASSIVE touchmove handler is added
+            dynamically so we can preventDefault and drag the track.
+   Phase 3: On touchend after a horizontal swipe, we call
+            e.preventDefault() to kill the synthetic mouse events
+            (mouseover → click) that iOS generates, which is
+            what was causing the "first tap eaten" bug on the
+            showcase tabs below.
 ────────────────────────────────────────────── */
 (function () {
   const outer = document.querySelector(".carousel-outer");
@@ -221,7 +235,9 @@ window.addEventListener("resize", () => {
   let touchCurrentX = 0;
   let isTouching = false;
   let touchDirection = null; // 'horizontal' | 'vertical' | null
+  let nonPassiveHandler = null; // reference so we can remove it
 
+  // touchstart — always passive, just records start position
   outer.addEventListener(
     "touchstart",
     (e) => {
@@ -231,56 +247,79 @@ window.addEventListener("resize", () => {
       trackStartOffset = getTrackOffset();
       isTouching = true;
       touchDirection = null;
-      outer.classList.add("dragging");
       pauseAuto();
     },
     { passive: true },
   );
 
+  // Phase 1: PASSIVE touchmove — only detects direction, never blocks scroll
   outer.addEventListener(
     "touchmove",
     (e) => {
-      if (!isTouching) return;
+      // Once direction is decided this listener does nothing
+      if (!isTouching || touchDirection) return;
 
       const dx = e.touches[0].clientX - touchStartX;
       const dy = e.touches[0].clientY - touchStartY;
 
-      // Decide direction on first significant movement
-      if (!touchDirection) {
-        if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
-          touchDirection =
-            Math.abs(dx) > Math.abs(dy) ? "horizontal" : "vertical";
+      // 10px dead zone before deciding
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+
+      if (Math.abs(dx) > Math.abs(dy) * 1.5) {
+        // ── Horizontal confirmed ──
+        touchDirection = "horizontal";
+        outer.classList.add("dragging");
+
+        // Phase 2: attach non-passive handler to actually drag the track
+        nonPassiveHandler = (ev) => {
+          if (!isTouching || touchDirection !== "horizontal") return;
+          ev.preventDefault(); // block scroll only during confirmed horizontal drag
+          touchCurrentX = ev.touches[0].clientX;
+          const diff = touchStartX - touchCurrentX;
+          track.style.transform = `translateX(-${trackStartOffset + diff}px)`;
+        };
+        outer.addEventListener("touchmove", nonPassiveHandler, { passive: false });
+      } else {
+        // ── Vertical — browser handles scroll natively, we do nothing ──
+        touchDirection = "vertical";
+      }
+    },
+    { passive: true },
+  );
+
+  // touchend — passive: false so we can preventDefault after horizontal swipes
+  outer.addEventListener(
+    "touchend",
+    (e) => {
+      if (!isTouching) return;
+
+      const wasHorizontal = touchDirection === "horizontal";
+      isTouching = false;
+      touchDirection = null;
+
+      // Remove the non-passive handler if it was attached
+      if (nonPassiveHandler) {
+        outer.removeEventListener("touchmove", nonPassiveHandler);
+        nonPassiveHandler = null;
+      }
+      outer.classList.remove("dragging");
+
+      if (wasHorizontal) {
+        const diff = touchStartX - touchCurrentX;
+        if (Math.abs(diff) > 50) {
+          goTo(currentIndex + (diff > 0 ? 1 : -1));
+        } else {
+          goTo(currentIndex); // snap back
         }
-        return;
+        // Prevent synthetic mouse events (mouseover/click) after swipe.
+        // This is what fixes the "first tap eaten" on showcase tabs.
+        e.preventDefault();
       }
 
-      // Let the browser handle vertical scrolls normally
-      if (touchDirection === "vertical") return;
-
-      // Horizontal swipe — prevent page scroll and move carousel
-      e.preventDefault();
-      touchCurrentX = e.touches[0].clientX;
-      const diff = touchStartX - touchCurrentX;
-      const newOffset = trackStartOffset + diff;
-      track.style.transform = `translateX(-${newOffset}px)`;
+      resumeAuto();
     },
     { passive: false },
   );
-
-  outer.addEventListener("touchend", () => {
-    if (!isTouching) return;
-    isTouching = false;
-    touchDirection = null;
-    outer.classList.remove("dragging");
-
-    const diff = touchStartX - touchCurrentX;
-    if (Math.abs(diff) > 50) {
-      goTo(currentIndex + (diff > 0 ? 1 : -1));
-    } else {
-      goTo(currentIndex);
-    }
-    resumeAuto();
-  });
 
   // Prevent link/image drag interference
   track.addEventListener("dragstart", (e) => e.preventDefault());
