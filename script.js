@@ -1,7 +1,7 @@
 /* ══════════════════════════════════════════════════════════
    TABLE OF CONTENTS
    1. Nav — mobile menu toggle
-   2. Hero — phone rotation carousel (6 phones)
+   2. Hero — phone rotation carousel (8 phones)
    3. Advantages — sliding card carousel (with drag/scroll/trackpad)
    4. Showcase — tab switcher
    5. Timeline — scroll-triggered fade-in
@@ -40,7 +40,7 @@ window.addEventListener("resize", () => {
 });
 
 /* ──────────────────────────────────────────────
-   2. HERO — Phone rotation (6 phones, 6 positions)
+   2. HERO — Phone rotation (8 phones, 8 positions)
 ────────────────────────────────────────────── */
 (function () {
   const POSITIONS = [
@@ -50,13 +50,15 @@ window.addEventListener("resize", () => {
     "pos-center",
     "pos-right",
     "pos-hidden-right",
+    "pos-far-hidden-right",
+    "pos-far-hidden-right-2",
   ];
 
   const phones = document.querySelectorAll(".phone");
-  let state = [0, 1, 2, 3, 4, 5];
+  let state = [0, 1, 2, 3, 4, 5, 6, 7];
 
   function rotate() {
-    state = state.map((s) => (s + 1) % 6);
+    state = state.map((s) => (s + 1) % 8);
     phones.forEach((phone, i) => {
       const loaded = phone.classList.contains("loaded") ? " loaded" : "";
       phone.className = "phone " + POSITIONS[state[i]] + loaded;
