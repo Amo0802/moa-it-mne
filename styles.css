@@ -480,6 +480,24 @@ nav {
   pointer-events: none;
 }
 
+.phone.pos-far-hidden-right {
+  width: 180px;
+  height: 380px;
+  transform: translateX(220%);
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.phone.pos-far-hidden-right-2 {
+  width: 180px;
+  height: 380px;
+  transform: translateX(300%);
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 /* ──────────────────────────────────────────────
    5. ADVANTAGES CAROUSEL
