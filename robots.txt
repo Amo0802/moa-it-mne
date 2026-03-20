@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moait.me/sitemap.xml
