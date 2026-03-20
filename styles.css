@@ -1113,9 +1113,25 @@ nav {
     padding: 56px 20px;
   }
 
+.showcase-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .showcase-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
   .showcase-tab {
     font-size: 0.78rem;
     padding: 8px 16px;
+    flex-shrink: 0;
   }
 
   .showcase-phones {
